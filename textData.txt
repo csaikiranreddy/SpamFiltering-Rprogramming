@@ -1,0 +1,8 @@
+install.packages("wordcloud") 
+library(wordcloud)
+wordcloud(sms_corpus_clean,  + min.freq = 50, + random.order =  + FALSE)
+wordcloud(sms_corpus_clean, min.freq = 50)
+spam <- subset(sms_raw, type == "spam") 
+ham <- subset(sms_raw, type == "ham") 
+wordcloud(spam$text, max.words = 40, scale = c(3, 0.5))
+wordcloud(ham$text, max.words = 40, scale = c(3, 0.5)) 
